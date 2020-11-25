@@ -32,6 +32,18 @@ class GameViewController: NSViewController {
         mtkView.device = defaultDevice
 
         engine = Engine(mtkView: mtkView)
+        
+        // Load main asset pack
+        do {
+            try engine.assetManager.loadAssetPack(path: Bundle.main.path(forResource: "pack", ofType: "gea")!)
+            #if DEBUG
+            for (i, texture) in engine.assetManager.textures.enumerated() {
+                print("Texture #\(i) - \(texture.assetData().count) bytes")
+            }
+            #endif
+        } catch _ {
+            fatalError("Cannot load AssetPack")
+        }
 
         engine.renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
     }
