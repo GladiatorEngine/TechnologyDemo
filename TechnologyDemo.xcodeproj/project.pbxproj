@@ -14,7 +14,7 @@
 		0469A719256E746000A2EA1F /* TechnologyDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469A718256E746000A2EA1F /* TechnologyDemoTests.swift */; };
 		0469A724256E746000A2EA1F /* TechnologyDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469A723256E746000A2EA1F /* TechnologyDemoUITests.swift */; };
 		0469A739256E81CC00A2EA1F /* Engine in Frameworks */ = {isa = PBXBuildFile; productRef = 0469A738256E81CC00A2EA1F /* Engine */; };
-		0469A7E8256EA4C400A2EA1F /* pack.gea in Resources */ = {isa = PBXBuildFile; fileRef = 0469A7E7256EA4C400A2EA1F /* pack.gea */; };
+		0480A015256FF0EA002B16CC /* pack.gea in Resources */ = {isa = PBXBuildFile; fileRef = 0480A014256FF0EA002B16CC /* pack.gea */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		0469A71F256E746000A2EA1F /* TechnologyDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnologyDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0469A723256E746000A2EA1F /* TechnologyDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyDemoUITests.swift; sourceTree = "<group>"; };
 		0469A725256E746000A2EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0469A7E7256EA4C400A2EA1F /* pack.gea */ = {isa = PBXFileReference; lastKnownFileType = file; path = pack.gea; sourceTree = "<group>"; };
+		0480A014256FF0EA002B16CC /* pack.gea */ = {isa = PBXFileReference; lastKnownFileType = file; path = pack.gea; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 		0469A7D9256EA26F00A2EA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0469A7E7256EA4C400A2EA1F /* pack.gea */,
+				0480A014256FF0EA002B16CC /* pack.gea */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 			files = (
 				0469A70A256E746000A2EA1F /* Assets.xcassets in Resources */,
 				0469A70D256E746000A2EA1F /* Main.storyboard in Resources */,
-				0469A7E8256EA4C400A2EA1F /* pack.gea in Resources */,
+				0480A015256FF0EA002B16CC /* pack.gea in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
