@@ -1,1 +1,2 @@
 *.gea # exclude all compiled GEA-assets
+xcuserdata/
