@@ -142,6 +142,7 @@
 		04710616257283C500BFC429 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				047106432572A47700BFC429 /* models */,
 				04710636257287AE00BFC429 /* textures */,
 			);
 			path = Source;
@@ -153,6 +154,13 @@
 				04710617257283D100BFC429 /* smpte.png */,
 			);
 			path = textures;
+			sourceTree = "<group>";
+		};
+		047106432572A47700BFC429 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "rm -rf .rbuild\nmkdir -p .rbuild/resources/textures\nfor f in TechnologyDemo/Resources/Source/textures/**.png; do\n    gladiator-tools asset-builder texture build -p \"$f\" -o \".rbuild/resources/textures/$(basename \"${f%.*}\").gea\"\ndone\ngladiator-tools asset-builder pack build .rbuild/resources/textures/*.gea -o .rbuild/pack.gea\ncp .rbuild/pack.gea TechnologyDemo/Resources/pack.gea\nrm -rf .rbuild\n";
+			shellScript = "rm -rf .rbuild\nmkdir -p .rbuild/resources\nshopt -s nullglob\nfor f in TechnologyDemo/Resources/Source/textures/**.png; do\n    gladiator-tools asset-builder texture build -p \"$f\" -o \".rbuild/resources/texture_$(basename \"${f%.*}\").gea\"\ndone\nfor f in TechnologyDemo/Resources/Source/models/**.json; do\n    gladiator-tools asset-builder model build -v \"$f\" -o \".rbuild/resources/model_$(basename \"${f%.*}\").gea\"\ndone\ngladiator-tools asset-builder pack build .rbuild/resources/*.gea -o .rbuild/pack.gea\ncp .rbuild/pack.gea TechnologyDemo/Resources/pack.gea\nrm -rf .rbuild\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
