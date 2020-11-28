@@ -1,3 +1,4 @@
 **.gea # exclude all compiled GEA-assets
+/TechnologyDemo/Resources/pack.gea # completely ignore pack.gea
 xcuserdata/
 /.rbuild
