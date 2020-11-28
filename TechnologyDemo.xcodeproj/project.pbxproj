@@ -666,8 +666,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GladiatorEngine/GladiatorEngine";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = revision;
+				revision = 7f2da47674159a2bf6904d219933ac00021d8167;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
