@@ -14,6 +14,7 @@
 		0469A719256E746000A2EA1F /* TechnologyDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469A718256E746000A2EA1F /* TechnologyDemoTests.swift */; };
 		0469A724256E746000A2EA1F /* TechnologyDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469A723256E746000A2EA1F /* TechnologyDemoUITests.swift */; };
 		0469A739256E81CC00A2EA1F /* Engine in Frameworks */ = {isa = PBXBuildFile; productRef = 0469A738256E81CC00A2EA1F /* Engine */; };
+		047106322572875300BFC429 /* pack.gea in Resources */ = {isa = PBXBuildFile; fileRef = 04710631257286B800BFC429 /* pack.gea */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,9 +142,17 @@
 		04710616257283C500BFC429 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				04710617257283D100BFC429 /* smpte.png */,
+				04710636257287AE00BFC429 /* textures */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		04710636257287AE00BFC429 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				04710617257283D100BFC429 /* smpte.png */,
+			);
+			path = textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +162,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0469A728256E746000A2EA1F /* Build configuration list for PBXNativeTarget "TechnologyDemo" */;
 			buildPhases = (
-				0471061B257283F000BFC429 /* ShellScript */,
+				0471061B257283F000BFC429 /* Build all GEA-assets */,
 				0469A6F9256E745C00A2EA1F /* Sources */,
 				0469A6FA256E745C00A2EA1F /* Frameworks */,
 				0469A6FB256E745C00A2EA1F /* Resources */,
@@ -258,6 +267,7 @@
 			files = (
 				0469A70A256E746000A2EA1F /* Assets.xcassets in Resources */,
 				0469A70D256E746000A2EA1F /* Main.storyboard in Resources */,
+				047106322572875300BFC429 /* pack.gea in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +288,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0471061B257283F000BFC429 /* ShellScript */ = {
+		0471061B257283F000BFC429 /* Build all GEA-assets */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,13 +297,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Build all GEA-assets";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "rm -rf .rbuild\nmkdir -p .rbuild/resources\ngladiator-tools asset-builder texture build -p TechnologyDemo/Resources/Source/smpte.png -o .rbuild/resources/smpte_test.gea\ngladiator-tools asset-builder pack build .rbuild/resources/*.gea -o .rbuild/pack.gea\ncp .rbuild/pack.gea TechnologyDemo/Resources/pack.gea\nrm -rf .rbuild\n";
+			shellPath = /bin/bash;
+			shellScript = "rm -rf .rbuild\nmkdir -p .rbuild/resources/textures\nfor f in TechnologyDemo/Resources/Source/textures/**.png; do\n    gladiator-tools asset-builder texture build -p \"$f\" -o \".rbuild/resources/textures/$(basename \"${f%.*}\").gea\"\ndone\ngladiator-tools asset-builder pack build .rbuild/resources/**.gea -o .rbuild/pack.gea\ncp .rbuild/pack.gea TechnologyDemo/Resources/pack.gea\nrm -rf .rbuild\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
