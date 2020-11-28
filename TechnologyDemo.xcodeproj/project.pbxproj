@@ -15,7 +15,6 @@
 		0469A724256E746000A2EA1F /* TechnologyDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469A723256E746000A2EA1F /* TechnologyDemoUITests.swift */; };
 		0469A739256E81CC00A2EA1F /* Engine in Frameworks */ = {isa = PBXBuildFile; productRef = 0469A738256E81CC00A2EA1F /* Engine */; };
 		047106322572875300BFC429 /* pack.gea in Resources */ = {isa = PBXBuildFile; fileRef = 04710631257286B800BFC429 /* pack.gea */; };
-		047106482572A5FE00BFC429 /* cube.json in Resources */ = {isa = PBXBuildFile; fileRef = 047106472572A5FE00BFC429 /* cube.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,7 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047106482572A5FE00BFC429 /* cube.json in Resources */,
 				0469A70A256E746000A2EA1F /* Assets.xcassets in Resources */,
 				0469A70D256E746000A2EA1F /* Main.storyboard in Resources */,
 				047106322572875300BFC429 /* pack.gea in Resources */,
