@@ -15,6 +15,7 @@
 		0469A724256E746000A2EA1F /* TechnologyDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469A723256E746000A2EA1F /* TechnologyDemoUITests.swift */; };
 		0469A739256E81CC00A2EA1F /* Engine in Frameworks */ = {isa = PBXBuildFile; productRef = 0469A738256E81CC00A2EA1F /* Engine */; };
 		047106322572875300BFC429 /* pack.gea in Resources */ = {isa = PBXBuildFile; fileRef = 04710631257286B800BFC429 /* pack.gea */; };
+		047106482572A5FE00BFC429 /* cube.json in Resources */ = {isa = PBXBuildFile; fileRef = 047106472572A5FE00BFC429 /* cube.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0469A725256E746000A2EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04710617257283D100BFC429 /* smpte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smpte.png; sourceTree = "<group>"; };
 		04710631257286B800BFC429 /* pack.gea */ = {isa = PBXFileReference; lastKnownFileType = file; path = pack.gea; sourceTree = "<group>"; };
+		047106472572A5FE00BFC429 /* cube.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cube.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		047106432572A47700BFC429 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				047106472572A5FE00BFC429 /* cube.json */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047106482572A5FE00BFC429 /* cube.json in Resources */,
 				0469A70A256E746000A2EA1F /* Assets.xcassets in Resources */,
 				0469A70D256E746000A2EA1F /* Main.storyboard in Resources */,
 				047106322572875300BFC429 /* pack.gea in Resources */,
@@ -312,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "rm -rf .rbuild\nmkdir -p .rbuild/resources\nshopt -s nullglob\nfor f in TechnologyDemo/Resources/Source/textures/**.png; do\n    gladiator-tools asset-builder texture build -p \"$f\" -o \".rbuild/resources/texture_$(basename \"${f%.*}\").gea\"\ndone\nfor f in TechnologyDemo/Resources/Source/models/**.json; do\n    gladiator-tools asset-builder model build -v \"$f\" -o \".rbuild/resources/model_$(basename \"${f%.*}\").gea\"\ndone\ngladiator-tools asset-builder pack build .rbuild/resources/*.gea -o .rbuild/pack.gea\ncp .rbuild/pack.gea TechnologyDemo/Resources/pack.gea\nrm -rf .rbuild\n";
+			shellScript = "rm -rf .rbuild\nmkdir -p .rbuild/resources\nshopt -s nullglob\nfor f in TechnologyDemo/Resources/Source/textures/**.png; do\n    gladiator-tools asset-builder texture build -p \"$f\" -o \".rbuild/resources/texture_$(basename \"${f%.*}\").gea\" || exit 1\ndone\nfor f in TechnologyDemo/Resources/Source/models/**.json; do\n    gladiator-tools asset-builder model build -v \"$f\" -o \".rbuild/resources/model_$(basename \"${f%.*}\").gea\" || exit 1\ndone\ngladiator-tools asset-builder pack build .rbuild/resources/*.gea -o .rbuild/pack.gea || exit 1\ncp .rbuild/pack.gea TechnologyDemo/Resources/pack.gea\nrm -rf .rbuild\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
