@@ -32,6 +32,12 @@ class GameViewController: NSViewController {
         mtkView.device = defaultDevice
 
         engine = Engine(mtkView: mtkView)
+        engine.setupNetwork(host: "127.0.0.1", port: 8482)
+        do {
+            engine.logger.write(message: "Server: \(try engine.gameNetworkClient.greet(name: "TechnologyDemo"))", type: .info)
+        } catch let e {
+            engine.logger.write(message: "Failed to use GameNetwork: \(e)", type: .lowWarning)
+        }
         
         // Load main asset pack
         do {
